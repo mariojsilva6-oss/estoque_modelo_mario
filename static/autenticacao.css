@@ -1,0 +1,117 @@
+/* login.css — estilo dark moderno */
+
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --accent: #7c3aed; /* roxo */
+  --accent-hover: #9f67ff;
+  --danger: #ef4444;
+  --radius: 12px;
+  --shadow: 0 8px 24px rgba(0,0,0,0.6);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: linear-gradient(160deg, #0d1117, #0b0f16);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container-login {
+  background: var(--card);
+  padding: 2rem 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.titulo-principal {
+  margin: 0 0 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.erro {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--danger);
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.grupo-input {
+  text-align: left;
+  margin-bottom: 1.25rem;
+}
+
+.rotulo {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.campo-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #30363d;
+  border-radius: var(--radius);
+  background: #0d1117;
+  color: var(--text);
+  font-size: 1rem;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.campo-input:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.3);
+}
+
+.botao-login {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.2s;
+}
+
+.botao-login:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.link-cadastro {
+  margin-top: 1.25rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.link-cadastro a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link-cadastro a:hover {
+  text-decoration: underline;
+}

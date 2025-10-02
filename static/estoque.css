@@ -1,0 +1,136 @@
+/* estoque.css — estilo dark moderno */
+
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --accent: #7c3aed;
+  --accent-hover: #9f67ff;
+  --radius: 10px;
+  --shadow: 0 6px 18px rgba(0,0,0,0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: linear-gradient(160deg, #0d1117, #0b0f16);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* Container principal */
+.container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.header h1 {
+  font-size: 1.6rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--accent-hover);
+}
+
+/* Subtítulo */
+.container h2 {
+  margin-bottom: 1.2rem;
+  font-size: 1.3rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+thead {
+  background: var(--accent);
+  color: white;
+}
+
+thead th {
+  text-align: left;
+  padding: 0.9rem 1rem;
+  font-size: 0.95rem;
+}
+
+tbody tr {
+  background: var(--card);
+  transition: background 0.2s;
+}
+
+tbody tr:nth-child(even) {
+  background: #1f2937;
+}
+
+tbody tr:hover {
+  background: rgba(124, 58, 237, 0.15);
+}
+
+tbody td {
+  padding: 0.9rem 1rem;
+  font-size: 0.9rem;
+  color: var(--text);
+  border-bottom: 1px solid #30363d;
+  word-wrap: break-word;
+}
+
+/* Linha sem registros */
+tbody tr td[colspan="5"] {
+  text-align: center;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links {
+    margin-top: 1rem;
+  }
+  table {
+    font-size: 0.85rem;
+  }
+}
