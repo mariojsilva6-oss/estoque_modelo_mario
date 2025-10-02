@@ -20,21 +20,24 @@
         <table>
             <thead>
                 <tr>
+                    <th>id</th>
                     <th>Produto</th>
                     <th>Quantidade</th>
                     <th>Tipo de Movimentação</th>
                     <th>Data</th>
                     <th>Usuário</th>
+
                 </tr>
             </thead>
             <tbody>
                 {% for movimentacao in movimentacoes%}
                 <tr>
-                    <td>{{ mov.produto_id }}</td>
-                    <td>{{ mov.tipo_movimentacao }}</td>
-                    <td>{{ mov.quantidade }}</td>
-                    <td>{{ mov.data_movimentacao }}</td>
-                    <td>{{ mov.nome }}</td>
+                    <td>{{ movimentacao.produto_id }}</td>
+                    <td>{{ movimentacao.produto_nome }}</td>
+                    <td>{{ movimentacao.tipo_movimentacao }}</td>
+                    <td>{{ movimentacao.quantidade }}</td>
+                    <td>{{ movimentacao.data_movimentacao }}</td>
+                    <td>{{ movimentacao.nome }}</td>
                 </tr>
                 {% else %}
                 <tr>

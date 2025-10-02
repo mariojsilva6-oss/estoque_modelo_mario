@@ -155,11 +155,18 @@ def saida_produto(produto_id):
 
     return redirect(url_for('cadastro_produto'))
 
+
 @app.route('/estoque')
 @login_required
 def estoque():
-    movimentacoes = query_db('SELECT * FROM movimentacao_estoque AS m JOIN usuarios AS u ON m.usuario_id = u.id ORDER BY m.data_movimentacao DESC')
-    return render_template('estoque.html', mov=movimentacoes, usuario=session.get('usuario_nome'))
+    movimentacoes = query_db('''
+                        SELECT m.produto_id, p.nome AS produto_nome, m.tipo_movimentacao, m.quantidade, m.data_movimentacao, u.nome AS usuario_nome
+                        FROM movimentacao_estoque AS m
+                        JOIN usuarios AS u ON m.usuario_id = u.id
+                        JOIN produtos AS p ON m.produto_id = p.id
+                        ORDER BY m.data_movimentacao DESC
+                        ''')
+    return render_template('estoque.html', movimentacoes=movimentacoes, usuario=session.get('usuario_nome'))
 
 if __name__ == '__main__':
     app.run(debug=True)
